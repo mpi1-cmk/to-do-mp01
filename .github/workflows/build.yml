@@ -23,6 +23,12 @@ jobs:
           flutter-version: "3.32.8"
           channel: stable
 
+      - name: Create Android and Windows project files
+        run: flutter create --platforms=android,windows --org com.mp.tasks --project-name tasks_alarm .
+
+      - name: Prepare Android alarm settings
+        run: python tool/patch_android.py
+
       - name: Install dependencies
         run: flutter pub get
 
@@ -47,6 +53,9 @@ jobs:
         with:
           flutter-version: "3.32.8"
           channel: stable
+
+      - name: Create Windows project files
+        run: flutter create --platforms=windows --org com.mp.tasks --project-name tasks_alarm .
 
       - name: Install dependencies
         run: flutter pub get
