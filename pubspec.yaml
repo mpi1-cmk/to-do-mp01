@@ -1,0 +1,28 @@
+name: tasks_alarm
+description: مدير مهام بتنبيهات صوتية حقيقية لـ Android و Windows
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  flutter_local_notifications: ">=20.0.0 <22.0.0"
+  timezone: any
+  path_provider: any
+  audioplayers: any
+  local_notifier: any
+  window_manager: any
+  tray_manager: any
+  launch_at_startup: any
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/sounds/alarm.wav
+    - assets/icons/tray.ico
